@@ -29,6 +29,141 @@ const Playground = () => {
       },
     });
   };
+  const customGridCard = (
+    <div className="max-w-sm w-full bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+      {/* Custom Gradient Header */}
+      <div className="w-full h-40 bg-gradient-to-r from-black via-white to-blue bg-[length:200%_200%] " />
+
+      {/* Badge */}
+      <div className="px-5 pt-4">
+        <span className="text-xs font-medium inline-flex items-center gap-1 px-2.5 py-0.5 rounded-sm border bg-purple-100 text-purple-800 border-purple-400 dark:bg-gray-700 dark:text-purple-400">
+          {/* Icon */}
+          <svg
+            class="w-[12px] h-[12px] text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M10.7367 14.5876c.895.2365 2.8528.754 3.1643-.4966.3179-1.2781-1.5795-1.7039-2.5053-1.9117-.1034-.0232-.1947-.0437-.2694-.0623l-.6025 2.4153c.0611.0152.1328.0341.2129.0553Zm.8452-3.5291c.7468.1993 2.3746.6335 2.6581-.5025.2899-1.16213-1.2929-1.5124-2.066-1.68348-.0869-.01923-.1635-.03619-.2262-.0518l-.5462 2.19058c.0517.0129.1123.0291.1803.0472Z"
+            />
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M9.57909 21.7008c5.35781 1.3356 10.78401-1.9244 12.11971-7.2816 1.3356-5.35745-1.9247-10.78433-7.2822-12.11995C9.06034.963624 3.6344 4.22425 2.2994 9.58206.963461 14.9389 4.22377 20.3652 9.57909 21.7008ZM14.2085 8.0526c1.3853.47719 2.3984 1.1925 2.1997 2.5231-.1441.9741-.6844 1.4456-1.4013 1.6116.9844.5128 1.485 1.2987 1.0078 2.6612-.5915 1.6919-1.9987 1.8347-3.8697 1.4807l-.454 1.8196-1.0972-.2734.4481-1.7953c-.2844-.0706-.575-.1456-.8741-.2269l-.44996 1.8038-1.09594-.2735.45407-1.8234c-.10059-.0258-.20185-.0522-.30385-.0788-.15753-.0411-.3168-.0827-.47803-.1231l-1.42812-.3559.54468-1.2563s.80844.215.7975.1991c.31063.0769.44844-.1256.50282-.2606l.71781-2.8766.11562.0288c-.04375-.0175-.08343-.0288-.11406-.0366l.51188-2.05344c.01375-.23312-.06688-.52719-.51125-.63812.01718-.01157-.79688-.19813-.79688-.19813l.29188-1.17187 1.51313.37781-.0013.00562c.2275.05657.4619.11032.7007.16469l.4497-1.80187 1.0965.27343-.4406 1.76657c.2944.06718.5906.135.8787.20687l.4375-1.755 1.0975.27344-.4493 1.8025Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Blockchain (Sepolia)
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="p-5 pt-3 flex flex-col justify-between min-h-[220px]">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Sepolia Blockchain Whiteboard
+        </h5>
+        <p className="text-sm text-gray-700 dark:text-gray-300">
+          A private blockchain space where each action forms an immutable block
+          on Sepolia (Ethereum).
+        </p>
+        <div className="flex justify-center sm:justify-start mt-2">
+          <button
+            onClick={() => navigate("/blockchainwhiteboard")}
+            className="w-10 sm:w-auto inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-indigo-800 whitespace-nowrap transition"
+          >
+            <span className="hidden sm:inline">Explore</span>
+            <svg
+              className="w-3.5 h-3.5 ml-0 sm:ml-2"
+              fill="none"
+              viewBox="0 0 14 10"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const customListCard = (
+    <div className="w-full bg-white border border-gray-200 rounded-lg shadow-sm flex justify-between items-center p-4 space-x-4 dark:bg-gray-800 dark:border-gray-700">
+      {/* Left Gradient Pill */}
+      <div className="w-5 h-16 rounded-full bg-gradient-to-r from-black via-white to-black bg-[length:200%_200%] animate-gradient-x" />
+
+      {/* Textual Content */}
+      <div className="flex flex-col flex-grow justify-between space-y-1">
+        <h5 className="text-lg font-bold text-gray-900 dark:text-white">
+          Sepolia Blockchain Whiteboard
+        </h5>
+        <p className="text-sm text-gray-700 dark:text-gray-300">
+          A private blockchain space where each action forms an immutable block
+          on Sepolia (Ethereum).
+        </p>
+
+        {/* Badge */}
+        <div className="">
+          <span className="text-xs font-medium inline-flex items-center gap-1 px-2.5 py-0.5 rounded-sm border bg-purple-100 text-purple-800 border-purple-400 dark:bg-gray-700 dark:text-purple-400">
+            {/* Icon */}
+            <svg
+              class="w-[12px] h-[12px] text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M10.7367 14.5876c.895.2365 2.8528.754 3.1643-.4966.3179-1.2781-1.5795-1.7039-2.5053-1.9117-.1034-.0232-.1947-.0437-.2694-.0623l-.6025 2.4153c.0611.0152.1328.0341.2129.0553Zm.8452-3.5291c.7468.1993 2.3746.6335 2.6581-.5025.2899-1.16213-1.2929-1.5124-2.066-1.68348-.0869-.01923-.1635-.03619-.2262-.0518l-.5462 2.19058c.0517.0129.1123.0291.1803.0472Z"
+              />
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M9.57909 21.7008c5.35781 1.3356 10.78401-1.9244 12.11971-7.2816 1.3356-5.35745-1.9247-10.78433-7.2822-12.11995C9.06034.963624 3.6344 4.22425 2.2994 9.58206.963461 14.9389 4.22377 20.3652 9.57909 21.7008ZM14.2085 8.0526c1.3853.47719 2.3984 1.1925 2.1997 2.5231-.1441.9741-.6844 1.4456-1.4013 1.6116.9844.5128 1.485 1.2987 1.0078 2.6612-.5915 1.6919-1.9987 1.8347-3.8697 1.4807l-.454 1.8196-1.0972-.2734.4481-1.7953c-.2844-.0706-.575-.1456-.8741-.2269l-.44996 1.8038-1.09594-.2735.45407-1.8234c-.10059-.0258-.20185-.0522-.30385-.0788-.15753-.0411-.3168-.0827-.47803-.1231l-1.42812-.3559.54468-1.2563s.80844.215.7975.1991c.31063.0769.44844-.1256.50282-.2606l.71781-2.8766.11562.0288c-.04375-.0175-.08343-.0288-.11406-.0366l.51188-2.05344c.01375-.23312-.06688-.52719-.51125-.63812.01718-.01157-.79688-.19813-.79688-.19813l.29188-1.17187 1.51313.37781-.0013.00562c.2275.05657.4619.11032.7007.16469l.4497-1.80187 1.0965.27343-.4406 1.76657c.2944.06718.5906.135.8787.20687l.4375-1.755 1.0975.27344-.4493 1.8025Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Blockchain (Sepolia)
+          </span>
+        </div>
+      </div>
+
+      {/* Button */}
+      <div className="flex justify-center sm:justify-start mt-2">
+        <button
+          onClick={() => alert("Explore Hardcoded List Card")}
+          className="w-10 sm:w-auto inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-indigo-800 whitespace-nowrap transition"
+        >
+          <span className="hidden sm:inline">Explore</span>
+          <svg
+            className="w-3.5 h-3.5 ml-0 sm:ml-2"
+            fill="none"
+            viewBox="0 0 14 10"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
 
   const fetchSpaces = async () => {
     setLoading(true);
@@ -183,14 +318,6 @@ const Playground = () => {
             {/* Right Controls */}
             <div className="flex items-center gap-3 flex-wrap justify-center md:justify-end">
               {/* Create Button */}
-              <button
-                onClick={() => navigate("/blockchainwhiteboard")}
-                className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
-              >
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                  Try out on Sepolia
-                </span>
-              </button>
 
               <button
                 onClick={() => setShowModal(true)}
@@ -265,6 +392,7 @@ const Playground = () => {
           <>
             {view === "grid" ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 w-full max-w-6xl place-items-center">
+                {customGridCard}
                 {filteredCards.map((card, index) => (
                   <div
                     key={index}
@@ -354,6 +482,7 @@ const Playground = () => {
               </div>
             ) : (
               <div className="flex flex-col gap-4 p-5 w-full max-w-6xl">
+                {customListCard}
                 {filteredCards.map((card, index) => (
                   <div
                     key={index}

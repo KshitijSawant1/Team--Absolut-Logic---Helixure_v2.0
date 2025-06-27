@@ -9,7 +9,7 @@ import Profile from "./components/Profile";
 import Playground from "./components/Playground";
 import Whiteboard from "./components/whiteboard/Whiteboard";
 import { ReactFlowProvider } from "reactflow";
-//import BlockchainWhiteboard from "./components/testnet/BlockchainWhiteboard";
+//import BlockchainWhiteboard from "./components/blockchain_space/";
 
 export const router = createBrowserRouter([
   {

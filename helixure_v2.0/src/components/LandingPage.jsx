@@ -1,12 +1,13 @@
 import React from "react";
-import KS from "../assets/testimage.png";
-import LandingPageImage from "../assets/testimage.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import BlockShowcase from "./block_carousal/BlockShowcase";
+import TiltedCard from "./TiltedCard";
 import MetaCube from "./MetaCube";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
-    <div style={{ backgroundColor: "#f3f8ff"}}>
+    <div style={{ backgroundColor: "#f3f8ff" }}>
       {/* Content (Now Above Gradient) */}
       <div className="relative z-10 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
         <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-7xl font-extrabold text-transparent sm:text-9xl md:text-[10rem]">
@@ -16,22 +17,22 @@ const LandingPage = () => {
       <MetaCube />
 
       {/* About Section */}
-      <section className="relative z-10 overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
+      <section className="relative z-10 overflow-hidden  bg-[#f3f8ff] sm:grid sm:grid-cols-2 sm:items-center">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-xl text-center sm:text-left">
             <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
-              Empowering Data, Enhancing Intelligence
+              Spiral of Integrity, Secured by Blocks.
             </h2>
             <p className="text-gray-500 md:mt-4 text-justify leading-relaxed">
-              Data is the foundation of progress, but refinement is the key to
-              transformation. By structuring, summarizing, and optimizing
-              information, we unlock intelligence, enhance decision-making, and
-              pave the way for a smarter, more efficient future.
+              A decentralized whiteboard powered by blockchain where ideas,
+              collaboration, and trust converge. Create private or shared
+              spaces, generate immutable blocks, and experience Proof-of-Work
+              and Proof-of-History — all in a visually intuitive platform.
             </p>
             <div className="mt-4 md:mt-8 flex justify-start">
               <button
                 type="button"
-                onClick={() => navigate("/card")}
+                onClick={() => navigate("/playground")}
                 className="px-6 py-3.5 text-base font-medium text-white flex items-center gap-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 animate-bounce"
               >
                 <svg
@@ -76,15 +77,32 @@ const LandingPage = () => {
         </div>
 
         {/* Image */}
-        <img
-          alt="Refinx banner"
-          src={LandingPageImage}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="relative z-10 h-full w-full object-cover sm:h-[calc(100%-2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
-        />
+        >
+          <source
+            src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/hv2LP1.mp4?updatedAt=1751041562098"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </section>
 
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <div className="flex justify-center">
+        <h1 className="pt-5 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+          BlockCards Showcase
+        </h1>
+      </div>
+
+      <BlockShowcase />
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       {/* Problem Statement Section */}
-      <section className="relative z-10 bg-white dark:bg-gray-900">
+      <section className="relative z-10  bg-[#f3f8ff] dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
           <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
             <h2
@@ -96,37 +114,32 @@ const LandingPage = () => {
               </mark>
             </h2>
 
-            <p
-              className="text-lg font-normal text-black dark:text-gray-400 mb-6 leading-relaxed"
-              style={{ textAlign: "justify" }}
-            >
-              With the increasing reliance on data-driven processes, businesses,
-              developers, and content creators face several challenges:
+            <p className="text-l font-normal text-black dark:text-gray-400 mb-6 leading-relaxed text-justify">
+              In today’s digital age, the demand for secure, transparent, and
+              tamper-proof data storage and collaboration tools has grown
+              significantly. Centralized systems, though convenient, suffer from
+              vulnerabilities like data breaches, single points of failure,
+              limited transparency, and unverifiable data modifications—creating
+              trust issues for institutions and organizations.
             </p>
 
-            {/* Challenges List */}
             <div className="flow-root">
-              <dl className="-my-3 divide-y divide-gray-300 text-sm">
+              <dl className="-my-3 divide-y divide-gray-300 text-l">
                 {[
                   {
-                    title: "Data Overload & Unstructured Information",
+                    title: "Lack of Trust in Centralized Platforms",
                     description:
-                      "Extracting meaningful insights from large volumes of unstructured data is time-consuming and inefficient.",
+                      "Traditional systems fail to provide verifiability, auditability, and full control over digital records, making them unreliable for critical data.",
                   },
                   {
-                    title: "Content Moderation & Optimization Challenges",
+                    title: "Limited Educational Blockchain Tools",
                     description:
-                      "Crafting optimized, platform-specific content requires time and expertise.",
+                      "Most blockchain platforms focus on financial use cases and lack user-friendly, interactive environments for learning core concepts like PoW, PoH, and gas tracking.",
                   },
                   {
-                    title: "Code Complexity & Lack of Readability",
+                    title: "Barrier to Blockchain Adoption in Education",
                     description:
-                      "Developers struggle with code summarization, formatting inconsistencies, and optimization inefficiencies.",
-                  },
-                  {
-                    title: "Security & Compliance Issues",
-                    description:
-                      "Ensuring secure data processing, compliance with regulations, and preventing misinformation are crucial challenges.",
+                      "There are very few tools that combine decentralized infrastructure with intuitive interfaces tailored for educational collaboration, research, and experimentation.",
                   },
                 ].map((item, index) => (
                   <div
@@ -137,7 +150,7 @@ const LandingPage = () => {
                       className="font-medium text-black"
                       style={{ textAlign: "justify" }}
                     >
-                      {item.title}
+                      <strong>{item.title}</strong>
                     </dt>
                     <dd
                       className="text-black sm:col-span-2 leading-relaxed"
@@ -149,17 +162,79 @@ const LandingPage = () => {
                 ))}
               </dl>
             </div>
-
-            <p
-              className="text-lg font-normal text-black dark:text-gray-400 mt-6 leading-relaxed"
-              style={{ textAlign: "justify" }}
-            >
-              Refinx addresses these challenges by integrating multiple AI
-              agents to streamline data extraction, summarization, automation,
-              and security, making complex processes more efficient and
-              user-friendly.
-            </p>
           </div>
+          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+            <h2
+              id="proposed-solution"
+              className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+            >
+              <mark className="px-4 text-white bg-blue-600 rounded-sm dark:bg-blue-500">
+                Proposed Solution
+              </mark>
+            </h2>
+
+            <p className="text-lg font-normal text-black dark:text-gray-400 mb-6 leading-relaxed text-justify">
+              Helixure v2.0 provides a comprehensive solution that addresses the
+              identified challenges through the following key features and
+              approaches:
+            </p>
+
+            <div className="flow-root">
+              <dl className="-my-3 divide-y divide-gray-300 text-lg">
+                {[
+                  {
+                    title: "Blockchain-Based Architecture",
+                    description:
+                      "A decentralized system where data is stored as immutable blocks linked through cryptographic hashes, ensuring transparency and tamper resistance.",
+                  },
+                  {
+                    title: "Private and Shared Spaces",
+                    description:
+                      "Support for both individual and collaborative environments, with role-based access control for owners, editors, and viewers.",
+                  },
+                  {
+                    title: "Interactive Block Creation and Validation",
+                    description:
+                      "Integrates Proof of Work (PoW) and Proof of History (PoH) to teach and apply blockchain concepts through real-time block creation.",
+                  },
+                  {
+                    title: "Gas Meter Simulation",
+                    description:
+                      "A dynamic gas meter that simulates blockchain resource usage and encourages optimized data interactions.",
+                  },
+                  {
+                    title: "User-Friendly Interface",
+                    description:
+                      "A visual, interactive platform allowing users to create, view, and manage blockchain records with no prior technical expertise.",
+                  },
+                  {
+                    title: "Scalability and Extensibility",
+                    description:
+                      "Built for future growth, supporting integrations like AI-based analytics, external APIs, and advanced blockchain functionalities.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="grid grid-cols-1 gap-2 py-3 sm:grid-cols-3 sm:gap-4"
+                  >
+                    <dt
+                      className="font-medium text-black"
+                      style={{ textAlign: "justify" }}
+                    >
+                      <strong>{item.title}</strong>
+                    </dt>
+                    <dd
+                      className="text-black sm:col-span-2 leading-relaxed"
+                      style={{ textAlign: "justify" }}
+                    >
+                      {item.description}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
               <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
@@ -169,10 +244,11 @@ const LandingPage = () => {
               </h2>
 
               <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4 text-justify">
-                To create a unified AI-driven ecosystem that simplifies data
-                processing, enhances content moderation, optimizes code, and
-                ensures secure and efficient automation for developers,
-                businesses, and content creators worldwide.
+                To establish a secure, decentralized platform for managing,
+                validating, and collaborating on digital data. Helixure
+                envisions a future where transparency, trust, and data integrity
+                define every digital interaction—empowering both learners and
+                professionals through hands-on blockchain exploration.
               </p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
@@ -193,8 +269,8 @@ const LandingPage = () => {
                   >
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <b>Effortless Data Processing :</b> AI-driven extraction and
-                  summarization.
+                  <b>Decentralized Records:</b> Secure and traceable data via
+                  blockchain.
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -206,7 +282,8 @@ const LandingPage = () => {
                   >
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <b>Streamlined Development :</b>Enhanced code efficiency.
+                  <b>User-Friendly Blockchain:</b> Simplify PoW, PoH, and gas
+                  metering.
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -218,7 +295,8 @@ const LandingPage = () => {
                   >
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <b>Smart Content Creation :</b>Optimized and refined posts.
+                  <b>Collaborative Spaces:</b> Role-based private and shared
+                  environments.{" "}
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -230,7 +308,8 @@ const LandingPage = () => {
                   >
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <b>Secure & Compliant : </b>Reliable AI solutions.
+                  <b>Hands-On Learning:</b> Explore decentralized tech
+                  practically.
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -242,81 +321,91 @@ const LandingPage = () => {
                   >
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <b>AI for All :</b> Boosting productivity and accessibility.
+                  <b>Continuous Growth:</b> Evolve with feedback and new tech.
                 </li>
               </ul>
             </div>
           </div>
+
           <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-          <h1 className="pt-5 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            Contributors
-          </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div className="flex flex-wrap justify-center gap-6 p-5">
-              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                {/* Image Section */}
-                <a href="#">
-                  <img
-                    className="h-auto w-full rounded-t-lg transition-all duration-300 filter grayscale hover:grayscale-0"
-                    src={KS}
-                    alt="Profile Cover"
-                  />
-                </a>
-
-                {/* Content Section */}
-                <div className="p-5 text-center">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Kshitij K Sawant
-                    </h5>
-                  </a>
-                  <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-                    Software Developer | AI & Data Science Visionary | Educator
-                  </p>
-
-                  {/* Buttons Section */}
-                  <div className="flex flex-col gap-2">
-                    <a
-                      href="https://github.com/KshitijSawant1"
-                      className="flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-[#24292F] rounded-lg hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30"
-                    >
-                      <svg
-                        className="w-4 h-4 mr-2"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      Explore Github
-                    </a>
-
-                    <a
-                      href="https://www.linkedin.com/in/kshitijksawant/"
-                      className="flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-[#0A66C2] rounded-lg hover:bg-[#0A66C2]/90 focus:ring-4 focus:outline-none focus:ring-[#0A66C2]/50 dark:focus:ring-[#0A66C2]/55"
-                    >
-                      <svg
-                        className="w-4 h-4 mr-2"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.08 20.45H3.56V9h3.52v11.45zM5.32 7.53c-1.13 0-2.05-.92-2.05-2.05 0-1.13.92-2.05 2.05-2.05s2.05.92 2.05 2.05c0 1.13-.92 2.05-2.05 2.05zm14.62 12.92h-3.52v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.88V9h3.38v1.57h.05c.47-.9 1.62-1.86 3.34-1.86 3.57 0 4.23 2.35 4.23 5.42v6.32z" />
-                      </svg>
-                      Connect on LinkedIn
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>{" "}
+          <div className="flex justify-center">
+            <h1 className="pt-5 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+              Meet the Maker
+            </h1>
           </div>
+
+          <div className="w-full flex justify-center">
+            <TiltedCard
+              imageSrc="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/Kshitij%20K%20Sawant%20Cryptocurrency%20Photo.jpg?updatedAt=1751044291591"
+              altText="Ks Profile Card"
+              captionText="Kshitij K Sawant"
+              containerHeight="65vh"
+              containerWidth="30vw"
+              imageHeight="65vh"
+              imageWidth="30vw"
+              rotateAmplitude={12}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+                  {/* GitHub Button */}
+                  <a
+                    href="https://github.com/KshitijSawant1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white bg-[#24292F] hover:bg-[#1f2327] focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-4 py-2 inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 transition"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white mr-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+
+                  {/* LinkedIn Button */}
+                  <a
+                    href="https://www.linkedin.com/in/kshitijksawant/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white bg-[#0A66C2] hover:bg-[#084c98] focus:ring-4 focus:outline-none focus:ring-[#0A66C2]/50 font-medium rounded-lg text-sm px-4 py-2 inline-flex items-center dark:focus:ring-[#0A66C2]/55 transition"
+                  >
+                    <svg
+                      class="w-6 h-6 mr-2 text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+                        clip-rule="evenodd"
+                      />
+                      <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              }
+            />
+          </div>
+
           <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
           <h1 className="pt-5 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             Testimonials
@@ -326,27 +415,25 @@ const LandingPage = () => {
             <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
               <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  “It’s like having an entire team of experts in your pocket.”
+                  Redefining Secure Collaboration
                 </h3>
                 <p className="my-4">
-                  I’ve spent years sifting through data, writing reports, and
-                  summarizing endless information. This AI toolkit? It does all
-                  of that in minutes. It’s like having a team of researchers,
-                  writers, and analysts working for you 24/7. The time and
-                  energy this saves are unreal. It’s not just a tool; it’s a
-                  game-changer for anyone drowning in data.
+                  "Helixure v2.0 offers a refreshing take on decentralized
+                  collaboration. Its use of blockchain for educational and
+                  professional record management is both secure and intuitive. A
+                  promising innovation for the enterprise world."
                 </p>
               </blockquote>
               <figcaption className="flex items-center justify-center ">
                 <img
                   className="rounded-full w-15 h-15"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+                  src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/T1.jpg?updatedAt=1751047883365"
                   alt="profile picture"
                 />
                 <div className="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                  <div>Dr. Michael</div>
+                  <div>Meera K Sawant</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400 ">
-                    Anderson, AI Researcher
+                    Senior Manager @Birlasoft
                   </div>
                 </div>
               </figcaption>
@@ -354,27 +441,25 @@ const LandingPage = () => {
             <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
               <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  “Coding just got way less frustrating.”
+                  Perfect Blend of Education and Technology
                 </h3>
                 <p className="my-4">
-                  Every developer knows the struggle of messy, unreadable code.
-                  This AI doesn’t just clean it up—it actually makes it better.
-                  I tested it on some old projects, and wow, it felt like
-                  someone had gone in and magically made my work more efficient.
-                  If you’ve ever wished for a coding buddy who doesn’t judge
-                  your bad habits, this is it.
+                  "Helixure v2.0 bridges the gap between theoretical blockchain
+                  concepts and hands-on understanding. The gamified learning,
+                  Proof of Work, and Proof of History make it an excellent tool
+                  for students and educators alike."
                 </p>
               </blockquote>
               <figcaption className="flex items-center justify-center ">
                 <img
                   className="rounded-full w-15 h-15"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                  src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/T2.jpg?updatedAt=1751047883365"
                   alt="profile picture"
                 />
                 <div className="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                  <div> Sarah Patel, </div>
+                  <div> Poonam Gawade</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Lead Software Engineer at DevTech
+                    Skill Based Instituion Founder
                   </div>
                 </div>
               </figcaption>
@@ -382,27 +467,25 @@ const LandingPage = () => {
             <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
               <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  “I sleep better knowing this AI has my back.”
+                  Blockchain Made Practical
                 </h3>
                 <p className="my-4">
-                  Security is something you don’t think about… until something
-                  goes horribly wrong. This AI isn’t just reactive—it
-                  proactively spots threats before they become disasters. That’s
-                  huge. It’s like having a personal cybersecurity guard watching
-                  over your data while you focus on running your business. And
-                  let’s be real, who doesn’t want that kind of peace of mind?"
+                  "What stands out in Helixure v2.0 is its practical utility.
+                  It’s not just another blockchain experiment—it’s a functioning
+                  platform that solves real-world problems around trust,
+                  transparency, and decentralized data ownership."
                 </p>
               </blockquote>
               <figcaption className="flex items-center justify-center ">
                 <img
                   className="rounded-full w-15 h-15"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                  src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/T3.jpg?updatedAt=1751047883365"
                   alt="profile picture"
                 />
                 <div className="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                  <div> James Carter</div>
+                  <div>Rahul Shambharkar</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Cybersecurity Consultant
+                    Technical Lead @TCS
                   </div>
                 </div>
               </figcaption>
@@ -410,26 +493,25 @@ const LandingPage = () => {
             <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
               <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  “I never thought I’d enjoy writing social media posts.”
+                  A Platform Built on Trust and Transparency
                 </h3>
                 <p className="my-4">
-                  Coming up with engaging content every day is exhausting. This
-                  AI doesn’t just help—it actually makes it fun. It rewrites,
-                  optimizes, and polishes my posts so they sound better without
-                  losing my voice. For the first time, I feel like I have the
-                  upper hand on the algorithm instead of the other way around!
+                  "In a world moving rapidly toward digital ecosystems, Helixure
+                  v2.0 sets a new standard for integrity and traceability. Its
+                  real-time gas tracking and visual blockchain tools make it
+                  ideal for business and compliance use cases."
                 </p>
               </blockquote>
               <figcaption className="flex items-center justify-center ">
                 <img
                   className="rounded-full w-15 h-15"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                  src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/T4.jpg?updatedAt=1751047883365"
                   alt="profile picture"
                 />
                 <div className="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                  <div> Emily Zhou </div>
+                  <div> Krishnakumar Sawant</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Digital Marketing Strategist
+                    VP of Sales & Marketing, Pantex Nonwoven
                   </div>
                 </div>
               </figcaption>
@@ -438,223 +520,69 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <footer className="bg-white dark:bg-gray-900">
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-          <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center">
-                <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-5xl font-extrabold text-transparent sm:text-7xl md:text-8xl">
-                  REFYNIX
-                </h1>
-              </a>
-            </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Tech Stack
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-2">
-                  <li>
-                    <a href="https://react.dev/" className="hover:underline">
-                      React.js
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://vite.dev/" className="hover:underline">
-                      Vite.js
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      className="hover:underline"
-                    >
-                      Tailwind.css
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://flowbite.com/docs/getting-started/introduction/"
-                      className="hover:underline"
-                    >
-                      Flowbite
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.hyperui.dev/"
-                      className="hover:underline"
-                    >
-                      Hyper UI
-                    </a>
-                  </li>
-                </ul>
-              </div>
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+        <div className="max-w-screen-xl mx-auto p-6 sm:p-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Branding */}
+          <div>
+            <h1 className="text-5xl font-extrabold bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Helixure v2.0
+            </h1>
+            <p className="text-sm mt-2 text-gray-500 dark:text-gray-400">
+              Spiral of Integrity
+            </p>
+          </div>
 
-              <div>
-                <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  API / AI
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-2">
-                  <li>
-                    <a
-                      href="https://www.google.com/search?q=google+ai+studio&oq=google+AI+Studio&sourceid=chrome&ie=UTF-8https://aistudio.google.com/prompts/new_chat"
-                      className="hover:underline"
-                    >
-                      Google AI Studio
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://openai.com/" className="hover:underline">
-                      Open AI
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://gemini.google.com/?hl=en-IN"
-                      className="hover:underline"
-                    >
-                      Gemini
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.copilotkit.ai/"
-                      className="hover:underline"
-                    >
-                      Copliot Kit Library
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://jina.ai/" className="hover:underline">
-                      Jina.AI
-                    </a>
-                  </li>{" "}
-                  <li>
-                    <a
-                      href="https://www.firecrawl.dev/"
-                      className="hover:underline"
-                    >
-                      Firecrawl API
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Legal
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-2">
-                  <li>
-                    <a href="#" className="hover:underline">
-                      READme.md
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      MIT Lisence
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          {/* Frontend Stack */}
+          <div>
+            <h2 className="mb-3 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Frontend
+            </h2>
+            <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+              <li>React.js</li>
+              <li>Vite.js</li>
+              <li>Tailwind CSS + Flowbite</li>
+              <li>Framer Motion / GSAP</li>
+              <li>React Router Dom</li>
+              <li>React Toastify</li>
+              <li>React Helmet</li>
+              <li>React Flow / Dagre / ELK.js</li>
+              <li>D3.js / Fabric.js</li>
+              <li>Three.js / @react-three/fiber</li>
+            </ul>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <div className="flex mt-4 sm:justify-center sm:mt-0">
-              <a
-                href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg
-                  className="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 8 19"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="sr-only">Facebook page</span>
-              </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
-                <svg
-                  className="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 21 16"
-                >
-                  <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
-                </svg>
-                <span className="sr-only">Discord community</span>
-              </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
-                <svg
-                  className="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 17"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="sr-only">Twitter page</span>
-              </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
-                <svg
-                  className="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="sr-only">GitHub account</span>
-              </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              >
-                <svg
-                  className="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="sr-only">Dribbble account</span>
-              </a>
-            </div>
+
+          {/* Blockchain & Utilities */}
+          <div>
+            <h2 className="mb-3 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Blockchain & Utilities
+            </h2>
+            <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+              <li>Supabase (Auth, DB, Storage)</li>
+              <li>Ethers.js</li>
+              <li>SHA3 / BlakeJS (Hashing)</li>
+              <li>html2canvas (Image Rendering)</li>
+              <li>Metamask + Sephoila Testnet</li>
+              <li>clsx (Conditional Styling)</li>
+            </ul>
           </div>
+
+          {/* Dev Tools */}
+          <div>
+            <h2 className="mb-3 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Dev Tools
+            </h2>
+            <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+              <li>ESLint + Prettier</li>
+              <li>TypeScript Types</li>
+              <li>PostCSS + Autoprefixer</li>
+              <li>GitHub</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-200 dark:border-gray-700 mt-6 py-4 text-center text-sm text-gray-500 dark:text-gray-400">
+          © 2025 Helixure.tech — Built with 💙 on Blockchain
         </div>
       </footer>
     </div>
