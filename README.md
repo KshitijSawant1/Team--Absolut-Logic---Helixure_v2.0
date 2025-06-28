@@ -1,12 +1,15 @@
 # <img src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/hv2.png?updatedAt=1749919993925" alt="InVision Logo" width="40"/> Helixure - Spiral of Integrity
 
-### Quick Access Link : https://aurora-langauge-learning-app.netlify.app/
+### Quick Access Link : https://helixurev2-0.netlify.app/
+
+### Author : Kshitij K Sawant
 
 ---
 
-### Author : Kshitij K Sawant  
+[![Watch the video](https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/Helixure%20Link%20custom%20Thumbnail.png?updatedAt=1751049094482)](https://drive.google.com/file/d/1CaQTuMpj38Xr2Fk8Rni4LxiVKg5AwXBe/view?usp=sharing)
 
 ---
+
 ## Introduction
 
 **Helixure v2.0** is an advanced, decentralized collaborative platform that transforms the way individuals and teams interact with ideas, data, and digital assets. Inspired by the elegance of the helix — a symbol of structured evolution — Helixure combines the reliability of blockchain with the fluidity of creative collaboration.
@@ -590,6 +593,6 @@ npm run dev
 
 ## **⭐ Support**
 
-If you like this project, **give it a star** ⭐ on GitHub!  
+If you like this project, **give it a star** ⭐ on GitHub!
 
 ---
