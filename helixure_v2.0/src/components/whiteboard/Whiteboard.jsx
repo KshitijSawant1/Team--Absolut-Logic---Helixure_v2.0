@@ -958,7 +958,7 @@ const Whiteboard = () => {
           </div>
         )}
       </div>
-
+      <BotpressChat />
       <InstructionDrawer
         isOpen={activePanel === "instruction"}
         onClose={() => setActivePanel(null)}
