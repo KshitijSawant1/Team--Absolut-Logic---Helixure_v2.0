@@ -9,7 +9,7 @@ import Profile from "./components/Profile";
 import Playground from "./components/Playground";
 import Whiteboard from "./components/whiteboard/Whiteboard";
 import { ReactFlowProvider } from "reactflow";
-//import BlockchainWhiteboard from "./components/blockchain_space/";
+import BlockchainWhiteboard from "./components/blockchain_space/BlockchainWhiteboard";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       { path: "signin", element: <Signin /> },
       { path: "signup", element: <Signup /> },
       { path: "result", element: <ResultPage /> },
-      //{ path: "blockchainwhiteboard", element: <BlockchainWhiteboard /> },
+      { path: "blockchainwhiteboard", element: <BlockchainWhiteboard /> },
       {
         path: "profile",
         element: (
