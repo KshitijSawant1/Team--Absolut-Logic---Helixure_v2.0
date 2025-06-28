@@ -29,8 +29,8 @@ const PoWGameModal = ({ isOpen, onSuccess, onClose }) => {
   if (!isOpen || !GameComponent) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent">
+      <div className="bg-transparent p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-lg font-bold mb-4 text-center">
           Complete the PoW Challenge
         </h2>

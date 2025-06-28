@@ -60,11 +60,12 @@ const IconMatchCaptcha = ({ onSuccess = () => {}, onClose = () => {} }) => {
 
   const handleClick = (clickedId) => {
     if (locked) return;
-    setGas((prev) => +(prev + 0.000005).toFixed(6));
+    const newGas = +(gas + 0.000005).toFixed(6);
+    setGas(newGas);
 
     if (clickedId === target.id) {
       setLocked(true);
-      setTimeout(() => onSuccess(gas), 200);
+      setTimeout(() => onSuccess(newGas), 200);
     } else {
       alert("❌ Incorrect icon! Try again.");
     }

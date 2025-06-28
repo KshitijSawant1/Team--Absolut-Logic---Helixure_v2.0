@@ -1,5 +1,4 @@
 import ProtectedRoute from "./ProtectedRoute";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import LandingPage from "./components/LandingPage";
 import Signin from "./components/Signin";
@@ -8,8 +7,10 @@ import ResultPage from "./components/ResultPage";
 import Profile from "./components/Profile";
 import Playground from "./components/Playground";
 import Whiteboard from "./components/whiteboard/Whiteboard";
-import { ReactFlowProvider } from "reactflow";
 import BlockchainWhiteboard from "./components/blockchain_space/BlockchainWhiteboard";
+import PageNotFound from "./components/PageNotFound";
+import { ReactFlowProvider } from "reactflow";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,7 @@ export const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      { path: "*", element: <PageNotFound /> },
     ],
   },
 ]);
