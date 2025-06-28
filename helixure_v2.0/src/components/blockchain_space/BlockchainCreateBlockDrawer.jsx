@@ -90,7 +90,6 @@ const BlockchainCreateBlockDrawer = ({
             </button>
           </form>
         </div>
-        
       </div>
     )
   );

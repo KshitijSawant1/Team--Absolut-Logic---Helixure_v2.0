@@ -553,112 +553,75 @@ const BlockchainInstructionalPrompt = ({ onClose }) => {
     if (step > 0) setStep(step - 1);
   };
   return (
-    isOpen && (
-      <div className="fixed  z-[1000] inset-0 z-40 bg-black/30 backdrop-blur-sm flex">
-        <div className="w-[26rem] h-screen bg-white/90 dark:bg-gray-900/90 shadow-lg overflow-y-auto overflow-x-hidden transition-transform p-6 space-y-6 relative">
-          <h2 className="text-xl font-bold text-gray-700 dark:text-gray-100">
-            INSTRUCTIONS
+    <div className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-sm bg-black/30 p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg w-full max-w-lg md:w-[700px] p-4 md:p-6 shadow-lg flex flex-col space-y-4">
+        {/* Header */}
+        <div className="flex justify-between items-start ">
+          <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+            {steps[step].title}
           </h2>
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-            aria-label="Close Instructions"
+            disabled={step !== steps.length - 1}
+            className={`text-lg ${
+              step === steps.length - 1
+                ? "text-red-400 hover:text-red-600"
+                : "text-gray-300 cursor-not-allowed"
+            }`}
+            title={
+              step === steps.length - 1
+                ? "Close"
+                : "Complete all steps to close"
+            }
           >
             ✕
           </button>
-          {/* Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setDropdownOpen((prev) => !prev)}
-              aria-expanded={isDropdownOpen}
-              aria-controls="drawer-dropdown"
-              className="mb-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2.5 flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Dropdown
-              <svg
-                className="w-3 h-3"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
+        </div>
+
+        <hr className="h-px bg-gray-300 border-0 dark:bg-gray-600 mb-2" />
+
+        {/* Body */}
+        <div className="text-sm text-gray-700 dark:text-gray-200 mb-6 overflow-y-auto">
+          {typeof steps[step].content === "string" ? (
+            <p>{steps[step].content}</p>
+          ) : (
+            steps[step].content
+          )}
+        </div>
+
+        {/* Footer */}
+        <div className="flex justify-between items-center">
+          <button
+            onClick={prevStep}
+            disabled={step === 0}
+            className={`px-4 py-2 rounded text-sm ${
+              step === 0
+                ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+          >
+            Back
+          </button>
+
+          <div className="flex items-center gap-3">
+            {step === 0 && (
+              <button
+                onClick={() => setStep(steps.length - 1)}
+                className="px-4 py-2 text-sm bg-blue-100 text-blue-700 border border-blue-300 rounded hover:bg-blue-200"
               >
-                <path
-                  d="M19 9l-7 7-7-7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            {isDropdownOpen && (
-              <div className="relative overflow-x-auto bg-gray-100 dark:bg-gray-800 rounded-lg">
-                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-md">
-                  <thead className="text-xs text-gray-700 uppercase bg-blue-100 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                      <th scope="col" className="px-6 py-3">
-                        Title
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Traverse
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody id="drawer-dropdown">
-                    {steps.map((step, index) => (
-                      <tr
-                        key={index}
-                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200"
-                      >
-                        <th
-                          scope="row"
-                          className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white max-w-[180px] truncate"
-                          title={step.title} // Optional: tooltip to show full title on hover
-                        >
-                          {step.title}
-                        </th>
-                        <td className="px-4 py-3">
-                          <button
-                            onClick={() => {
-                              const el = document.getElementById(
-                                `step-${index}`
-                              );
-                              if (el) {
-                                el.scrollIntoView({
-                                  behavior: "smooth",
-                                  block: "start",
-                                });
-                                setDropdownOpen(false);
-                              }
-                            }}
-                            className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-blue-600"
-                          >
-                            Go
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                Skip to End
+              </button>
             )}
+            <button
+              onClick={nextStep}
+              className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              {step === steps.length - 1 ? "Finish" : "Next"}
+            </button>
           </div>
-
-          <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-md shadow-sm text-sm">
-            <strong>Tip:</strong> Use this guide to explore the blockchain
-            whiteboard features. Click any section to get started!
-          </div>
-          {steps.map((step, index) => (
-            <div key={index} id={`step-${index}`} className="border-b pb-6">
-              <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">
-                {step.title}
-              </h3>
-              <div>{step.content}</div>
-            </div>
-          ))}
         </div>
       </div>
-    )
+    </div>
   );
 };
 

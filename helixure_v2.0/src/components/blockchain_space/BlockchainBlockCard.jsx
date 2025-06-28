@@ -111,7 +111,7 @@ const BlockchainBlockCard = ({
         width: "18rem", // force 288px
         minWidth: "18rem",
         maxWidth: "18rem",
-        height: "19rem",
+        height: "21rem",
       }}
     >
       <div
@@ -121,7 +121,9 @@ const BlockchainBlockCard = ({
       <div className="p-4">
         <h2 className="text-lg font-bold">Block {sr}</h2>
         <h3 className="text-base font-semibold">{title}</h3>
-        <p className="text-xs text-gray-600 mb-2 break-words">{message}</p>
+        <p className="text-sm text-gray-600 mt-1">
+          {message.length > 30 ? `${message.slice(0, 50)}...` : message}
+        </p>
 
         <div className="text-xs mb-1">
           <strong className="mr-1">Hash:</strong>

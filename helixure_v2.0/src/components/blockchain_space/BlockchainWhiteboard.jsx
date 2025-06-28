@@ -6,6 +6,7 @@ import BlockchainBlockFlow from "./BlockchainBlockFlow";
 import BlockchainCreateBlockDrawer from "./BlockchainCreateBlockDrawer";
 import BlockchainInstructionDrawer from "./BlockchainInstructionalDrawer";
 import BlockchainInstructionPrompt from "./BlockchainInstructionalPrompt";
+import BlockchainSearchModal from "./BlockchainSearchModal";
 
 import { ReactFlowProvider } from "reactflow";
 import { supabase } from "../../supabaseClient";
@@ -23,6 +24,7 @@ export default function BlockchainWhiteboard() {
   const [totalGasUsed, setTotalGasUsed] = useState("0.000000");
   const [showInstructionDrawer, setShowInstructionDrawer] = useState(false);
   const [showInstructionPrompt, setShowInstructionPrompt] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
 
   useEffect(() => {
     const hasVisited = localStorage.getItem("visitedWhiteboard");
@@ -326,6 +328,7 @@ export default function BlockchainWhiteboard() {
             data-tooltip-target="tooltip-search"
             type="button"
             disabled={!account}
+            onClick={() => setShowSearchModal(true)}
             className={`inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group
               ${!account ? "opacity-50 cursor-not-allowed" : ""}`}
           >
@@ -356,6 +359,7 @@ export default function BlockchainWhiteboard() {
             Search
             <div className="tooltip-arrow" data-popper-arrow></div>
           </div>
+
           <div className="flex items-center justify-center">
             <button
               onClick={() => setDrawerOpen(true)}
@@ -439,7 +443,8 @@ export default function BlockchainWhiteboard() {
 
           <button
             type="button"
-            data-tooltip-target="tooltip-games"
+            data-tooltip-target="tooltip-Assistaint"
+            onClick={() => alert("Future Aspect Assitant Integration")}
             className="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
             <svg
@@ -454,14 +459,14 @@ export default function BlockchainWhiteboard() {
               <path d="M12.8638 3.49613C12.6846 3.18891 12.3557 3 12 3s-.6846.18891-.8638.49613l-3.49998 6c-.18042.30929-.1817.69147-.00336 1.00197S8.14193 11 8.5 11h7c.3581 0 .6888-.1914.8671-.5019.1784-.3105.1771-.69268-.0033-1.00197l-3.5-6ZM4 13c-.55228 0-1 .4477-1 1v6c0 .5523.44772 1 1 1h6c.5523 0 1-.4477 1-1v-6c0-.5523-.4477-1-1-1H4Zm12.5-1c-2.4853 0-4.5 2.0147-4.5 4.5s2.0147 4.5 4.5 4.5 4.5-2.0147 4.5-4.5-2.0147-4.5-4.5-4.5Z" />
             </svg>
 
-            <span className="sr-only">Games</span>
+            <span className="sr-only">Assistaint</span>
           </button>
           <div
-            id="tooltip-games"
+            id="tooltip-Assistaint"
             role="tooltip"
             className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
           >
-            Games
+            Assistaint
             <div className="tooltip-arrow" data-popper-arrow></div>
           </div>
         </div>
@@ -479,6 +484,13 @@ export default function BlockchainWhiteboard() {
       {showInstructionPrompt && (
         <BlockchainInstructionPrompt
           onClose={() => setShowInstructionPrompt(false)}
+        />
+      )}
+      {showSearchModal && (
+        <BlockchainSearchModal
+          isOpen={showSearchModal}
+          onClose={() => setShowSearchModal(false)}
+          blocks={blocks} // 👈 from your useState holding all fetched blocks
         />
       )}
     </div>
