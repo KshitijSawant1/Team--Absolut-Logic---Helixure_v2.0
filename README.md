@@ -1,6 +1,6 @@
 # <img src="https://ik.imagekit.io/rhzh8en76/Helixure%20v2.0%20Assests/hv2.png?updatedAt=1749919993925" alt="InVision Logo" width="40"/> Helixure - Spiral of Integrity
 
-### Quick Access Link : helixure-v2.netlify.app
+### Quick Access Link : [helixure-v2 Live](https://helixure-v2.netlify.app/)
 
 ### Author : Kshitij K Sawant
 
