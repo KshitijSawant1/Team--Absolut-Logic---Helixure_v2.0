@@ -115,10 +115,7 @@ const ViewSupplementaryLinksDrawer = ({
                   </div>
                 )}
                 <div className="text-xs text-gray-400 mt-1">
-                  Created By:{" "}
-                  {link.profiles
-                    ? `${link.profiles.firstname} ${link.profiles.lastname}`
-                    : "Unknown"}
+                  Created By: {link.created_by_name}
                 </div>
                 <div className="text-xs text-gray-400 mt-1">
                   Created At: {new Date(link.created_at).toLocaleString()}
