@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/AuthContext"; // 👈 Add this
 import helixurev2logo from "../assets/logos/hv2.png";
@@ -26,7 +26,6 @@ const Navbar = () => {
     { label: "playground", path: "/playground" },
     { label: "Result Page", path: "/result" },
     { label: "profile", path: "/profile" },
-    { label: "whiteboard", path: "/whiteboard" },
   ];
 
   useEffect(() => {

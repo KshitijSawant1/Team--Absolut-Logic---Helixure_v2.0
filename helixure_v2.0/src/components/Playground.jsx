@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaBars, FaTh, FaCheck } from "react-icons/fa";
 import { toast } from "react-toastify";
 import NewSpaceModal from "./NewSpaceModal";
-//import JoinSpaceModal from "./whiteboard/JoinSpaceModal";
+import JoinSpaceModal from "./shared_space/JoinSpaceModal";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,7 @@ const Playground = () => {
         <span className="text-xs font-medium inline-flex items-center gap-1 px-2.5 py-0.5 rounded-sm border bg-purple-100 text-purple-800 border-purple-400 dark:bg-gray-700 dark:text-purple-400">
           {/* Icon */}
           <svg
-            class="w-[12px] h-[12px] text-gray-800 dark:text-white"
+            className="w-[12px] h-[12px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -53,9 +53,9 @@ const Playground = () => {
             />
             <path
               fill="currentColor"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M9.57909 21.7008c5.35781 1.3356 10.78401-1.9244 12.11971-7.2816 1.3356-5.35745-1.9247-10.78433-7.2822-12.11995C9.06034.963624 3.6344 4.22425 2.2994 9.58206.963461 14.9389 4.22377 20.3652 9.57909 21.7008ZM14.2085 8.0526c1.3853.47719 2.3984 1.1925 2.1997 2.5231-.1441.9741-.6844 1.4456-1.4013 1.6116.9844.5128 1.485 1.2987 1.0078 2.6612-.5915 1.6919-1.9987 1.8347-3.8697 1.4807l-.454 1.8196-1.0972-.2734.4481-1.7953c-.2844-.0706-.575-.1456-.8741-.2269l-.44996 1.8038-1.09594-.2735.45407-1.8234c-.10059-.0258-.20185-.0522-.30385-.0788-.15753-.0411-.3168-.0827-.47803-.1231l-1.42812-.3559.54468-1.2563s.80844.215.7975.1991c.31063.0769.44844-.1256.50282-.2606l.71781-2.8766.11562.0288c-.04375-.0175-.08343-.0288-.11406-.0366l.51188-2.05344c.01375-.23312-.06688-.52719-.51125-.63812.01718-.01157-.79688-.19813-.79688-.19813l.29188-1.17187 1.51313.37781-.0013.00562c.2275.05657.4619.11032.7007.16469l.4497-1.80187 1.0965.27343-.4406 1.76657c.2944.06718.5906.135.8787.20687l.4375-1.755 1.0975.27344-.4493 1.8025Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
           Blockchain (Sepolia)
@@ -116,7 +116,7 @@ const Playground = () => {
           <span className="text-xs font-medium inline-flex items-center gap-1 px-2.5 py-0.5 rounded-sm border bg-purple-100 text-purple-800 border-purple-400 dark:bg-gray-700 dark:text-purple-400">
             {/* Icon */}
             <svg
-              class="w-[12px] h-[12px] text-gray-800 dark:text-white"
+              className="w-[12px] h-[12px] text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -130,9 +130,9 @@ const Playground = () => {
               />
               <path
                 fill="currentColor"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M9.57909 21.7008c5.35781 1.3356 10.78401-1.9244 12.11971-7.2816 1.3356-5.35745-1.9247-10.78433-7.2822-12.11995C9.06034.963624 3.6344 4.22425 2.2994 9.58206.963461 14.9389 4.22377 20.3652 9.57909 21.7008ZM14.2085 8.0526c1.3853.47719 2.3984 1.1925 2.1997 2.5231-.1441.9741-.6844 1.4456-1.4013 1.6116.9844.5128 1.485 1.2987 1.0078 2.6612-.5915 1.6919-1.9987 1.8347-3.8697 1.4807l-.454 1.8196-1.0972-.2734.4481-1.7953c-.2844-.0706-.575-.1456-.8741-.2269l-.44996 1.8038-1.09594-.2735.45407-1.8234c-.10059-.0258-.20185-.0522-.30385-.0788-.15753-.0411-.3168-.0827-.47803-.1231l-1.42812-.3559.54468-1.2563s.80844.215.7975.1991c.31063.0769.44844-.1256.50282-.2606l.71781-2.8766.11562.0288c-.04375-.0175-.08343-.0288-.11406-.0366l.51188-2.05344c.01375-.23312-.06688-.52719-.51125-.63812.01718-.01157-.79688-.19813-.79688-.19813l.29188-1.17187 1.51313.37781-.0013.00562c.2275.05657.4619.11032.7007.16469l.4497-1.80187 1.0965.27343-.4406 1.76657c.2944.06718.5906.135.8787.20687l.4375-1.755 1.0975.27344-.4493 1.8025Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             Blockchain (Sepolia)
@@ -320,6 +320,14 @@ const Playground = () => {
               {/* Create Button */}
 
               <button
+                onClick={() => setShowJoinModal(true)}
+                className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+              >
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                  Join A Space
+                </span>
+              </button>
+              <button
                 onClick={() => setShowModal(true)}
                 className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
               >
@@ -360,6 +368,13 @@ const Playground = () => {
           isOpen={showModal}
           onClose={() => {
             setShowModal(false);
+            fetchSpaces();
+          }}
+        />
+        <JoinSpaceModal
+          isOpen={showJoinModal}
+          onClose={() => {
+            setShowJoinModal(false);
             fetchSpaces();
           }}
         />

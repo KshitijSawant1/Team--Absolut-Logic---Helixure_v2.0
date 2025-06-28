@@ -698,7 +698,7 @@ const Profile = () => {
                   {[
                     ["First Name", "firstname", metadata.firstname || "John"],
                     ["Last Name", "lastname", metadata.lastname || "Doe"],
-                    ["Birthday", "dob", metadata.dob || "", "date"],
+                    ["Date of Birth", "dob", metadata.dob || "", "date"],
                     [
                       "Phone Number",
                       "phone",
